@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="950" pageHeight="842" columnWidth="910" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="202"/>
+	<property name="ireport.y" value="49"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select no_struk_pemb,kd_brg_pemb,nama_brg_pemb,nama_sup_pemb,jumlah_pemb,harga_pemb,total_pemb,tgl_pemb from pembelian]]>
+	</queryString>
+	<field name="no_struk_pemb" class="java.lang.String"/>
+	<field name="kd_brg_pemb" class="java.lang.String"/>
+	<field name="nama_brg_pemb" class="java.lang.String"/>
+	<field name="nama_sup_pemb" class="java.lang.String"/>
+	<field name="jumlah_pemb" class="java.lang.Integer"/>
+	<field name="harga_pemb" class="java.lang.String"/>
+	<field name="total_pemb" class="java.lang.String"/>
+	<field name="tgl_pemb" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="236" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="258" y="11" width="400" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font size="36" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[KONVEKSI NUGROHO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="195" y="86" width="551" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jl. BB gang Hj. Husin No 16 Rt.003 / Rw.005 Kelurahan Tegal Parang, Kecamatan Mampang Prapatan ., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="14" width="150" height="150"/>
+				<imageExpression><![CDATA["C:\\Users\\FADHAL\\Downloads\\KonveksiBpkNugroho\\src\\reports\\LogoKonveksi(1).jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="167" width="900" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Title" x="325" y="183" width="272" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PEMBELIAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="76" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="74" width="870" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="13" y="57" width="69" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO STRUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="91" y="57" width="94" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="190" y="57" width="97" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="298" y="57" width="69" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="57" width="69" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="488" y="57" width="105" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA SATUAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="617" y="57" width="91" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="734" y="57" width="146" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL PEMBELIAN]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="900" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="57" width="870" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="82" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="185" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="292" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="378" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="485" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="596" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="733" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="879" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="10" y="57" width="1" height="18"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_struk_pemb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_brg_pemb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_brg_pemb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="529" y="0" width="58" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga_pemb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="649" y="0" width="80" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_pemb}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="743" y="0" width="136" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_pemb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="70" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_sup_pemb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="54" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah_pemb}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="622" y="0" width="28" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="21" width="870" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="82" y="-2" width="1" height="24"/>
+			</line>
+			<staticText>
+				<reportElement x="501" y="0" width="28" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Rp.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="185" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="10" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="292" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="378" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="485" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="596" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="733" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="879" y="-2" width="1" height="24"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="137" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="3" width="900" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="746" y="106" width="135" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="742" y="117" width="149" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Rachmad Mauluddin (Admin)]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="751" y="56" width="128" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("id", "ID")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

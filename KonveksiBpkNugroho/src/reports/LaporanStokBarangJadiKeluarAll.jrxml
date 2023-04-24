@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="950" pageHeight="800" columnWidth="910" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="119"/>
+	<property name="ireport.y" value="82"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select id_brg_jadi_keluar,kd_brg_jadi,nama_brg_jadi,stok_brg_jadi_keluar,harga_brg_jadi,ket_brg_jadi,tanggal_brg_jadi_keluar from tb_brg_jadi_keluar]]>
+	</queryString>
+	<field name="id_brg_jadi_keluar" class="java.lang.String"/>
+	<field name="kd_brg_jadi" class="java.lang.String"/>
+	<field name="nama_brg_jadi" class="java.lang.String"/>
+	<field name="stok_brg_jadi_keluar" class="java.lang.Integer"/>
+	<field name="harga_brg_jadi" class="java.lang.String"/>
+	<field name="ket_brg_jadi" class="java.lang.String"/>
+	<field name="tanggal_brg_jadi_keluar" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="238" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="255" y="11" width="400" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font size="36" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[KONVEKSI NUGROHO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="81" width="551" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jl. BB gang Hj. Husin No 16 Rt.003 / Rw.005 Kelurahan Tegal Parang, Kecamatan Mampang Prapatan ., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta]]></text>
+			</staticText>
+			<image>
+				<reportElement x="7" y="14" width="150" height="150"/>
+				<imageExpression><![CDATA["C:\\Users\\FADHAL\\Downloads\\KonveksiBpkNugroho\\src\\reports\\LogoKonveksi(1).jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="167" width="910" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Title" x="251" y="184" width="404" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN BARANG JADI KELUAR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="76" splitType="Stretch">
+			<line>
+				<reportElement x="68" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="166" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="910" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="270" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="386" y="57" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="70" y="57" width="94" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BARANG]]></text>
+			</staticText>
+			<line>
+				<reportElement x="741" y="57" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="742" y="57" width="146" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL KELUAR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="604" y="57" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="496" y="57" width="105" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA SATUAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="387" y="57" width="106" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<line>
+				<reportElement x="887" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="493" y="57" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="169" y="57" width="97" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE BARANG]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="69" y="74" width="819" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="271" y="57" width="112" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BARANG]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="69" y="57" width="819" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="605" y="57" width="136" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KETERANGAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement x="166" y="-3" width="1" height="24"/>
+			</line>
+			<staticText>
+				<reportElement x="497" y="1" width="28" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[RP.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="68" y="-3" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="270" y="-3" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="386" y="-3" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="604" y="-3" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="493" y="-3" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="741" y="-3" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="887" y="-3" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="68" y="21" width="819" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="70" y="1" width="94" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_brg_jadi_keluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="1" width="97" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_brg_jadi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="1" width="112" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_brg_jadi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="1" width="103" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stok_brg_jadi_keluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="526" y="1" width="76" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga_brg_jadi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="605" y="0" width="136" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ket_brg_jadi}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="742" y="1" width="145" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tanggal_brg_jadi_keluar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="137" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="910" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="745" y="103" width="135" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="741" y="114" width="149" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Rachmad Mauluddin (Admin)]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="760" y="51" width="107" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("id", "ID")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

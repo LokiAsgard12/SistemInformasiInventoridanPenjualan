@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="950" pageHeight="842" columnWidth="910" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="0.8857805000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="awal" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Akhiran" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select no_struk_penj,kd_brg_penj,nama_brg_penj,nama_plgn_penj,jumlah_penj,harga_penj,total_penj,tgl_penj from penjualan where tgl_penj between $P{awal} and $P{Akhiran}]]>
+	</queryString>
+	<field name="no_struk_penj" class="java.lang.String"/>
+	<field name="kd_brg_penj" class="java.lang.String"/>
+	<field name="nama_brg_penj" class="java.lang.String"/>
+	<field name="nama_plgn_penj" class="java.lang.String"/>
+	<field name="jumlah_penj" class="java.lang.Integer"/>
+	<field name="harga_penj" class="java.lang.String"/>
+	<field name="total_penj" class="java.lang.String"/>
+	<field name="tgl_penj" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="238" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="268" y="10" width="400" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font size="36" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[KONVEKSI NUGROHO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="81" width="551" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Jl. BB gang Hj. Husin No 16 Rt.003 / Rw.005 Kelurahan Tegal Parang, Kecamatan Mampang Prapatan ., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta]]></text>
+			</staticText>
+			<image>
+				<reportElement x="20" y="13" width="150" height="150"/>
+				<imageExpression><![CDATA["C:\\Users\\FADHAL\\Downloads\\KonveksiBpkNugroho\\src\\reports\\LogoKonveksi(1).jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="166" width="900" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Title" x="335" y="182" width="272" height="28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENJUALAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="76" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="20" y="74" width="870" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="23" y="57" width="69" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO STRUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="101" y="57" width="94" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="200" y="57" width="97" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA BARANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="305" y="57" width="80" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="406" y="57" width="69" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="498" y="57" width="105" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA SATUAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="627" y="57" width="91" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL HARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="744" y="57" width="146" height="19" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL PENJUALAN]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="900" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="20" y="57" width="870" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="92" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="195" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="302" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="388" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="495" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="606" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="743" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="889" y="57" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="20" y="57" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement x="209" y="16" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="571" y="16" width="24" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S/d]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="309" y="16" width="150" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{awal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="632" y="16" width="150" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Akhiran}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="632" y="0" width="28" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[RP.]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="20" y="21" width="870" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="92" y="-2" width="1" height="24"/>
+			</line>
+			<staticText>
+				<reportElement x="511" y="0" width="28" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[RP.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="195" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="20" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="302" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="388" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="495" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="606" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="743" y="-2" width="1" height="24"/>
+			</line>
+			<line>
+				<reportElement x="889" y="-2" width="1" height="24"/>
+			</line>
+			<textField>
+				<reportElement x="23" y="0" width="69" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_struk_penj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="0" width="101" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_brg_penj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="0" width="105" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_brg_penj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="303" y="0" width="85" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_plgn_penj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="105" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah_penj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="539" y="0" width="64" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga_penj}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="746" y="0" width="143" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_penj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="0" width="83" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_penj}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="137" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="10" y="0" width="900" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="755" y="103" width="135" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="751" y="114" width="149" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Rachmad Mauluddin (Admin)]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="770" y="51" width="107" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new Locale("id", "ID")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
